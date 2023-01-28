@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!-- === Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ===== FONTS AWASOME ===== -->
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="style.css">
+        
+    <!-- ===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--<title>Responsive Navigation Menu Bar</title>-->
+</head>
+<body>
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen' ></i>
+            <span class="logo navLogo"><a href="#">Sandi</a></span>
+
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="#">Sandiwebdesign</a></span>
+                    <i class='bx bx-x siderbarClose'></i>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+                    <li><a href="about.html"><i class="fa fa-user" aria-hidden="true"></i>About</a></li>
+                    <li><a href="services.html"><i class="fa fa-check-circle" aria-hidden="true"></i>Services</a></li>
+                    <li><a href="Contact.html"><i class="fa fa-phone" aria-hidden="true"></i>Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    <i class='bx bx-moon moon'></i>
+                    <i class='bx bx-sun sun'></i>
+                </div>
+
+                <div class="searchBox">
+                   <div class="searchToggle">
+                    <i class='bx bx-x cancel'></i>
+                    <i class='bx bx-search search'></i>
+                   </div>
+
+                    <div class="search-field">
+                        <input type="text" placeholder="Search...">
+                        <i class='bx bx-search'></i>
+                    </div>
+                    <!--==== WEBSITE==== -->
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+
+<script>
+
+const body = document.querySelector("body"),
+      nav = document.querySelector("nav"),
+      modeToggle = document.querySelector(".dark-light"),
+      searchToggle = document.querySelector(".searchToggle"),
+      sidebarOpen = document.querySelector(".sidebarOpen"),
+      siderbarClose = document.querySelector(".siderbarClose");
+
+      let getMode = localStorage.getItem("mode");
+          if(getMode && getMode === "dark-mode"){
+            body.classList.add("dark");
+          }
+
+// js code to toggle dark and light mode
+      modeToggle.addEventListener("click" , () =>{
+        modeToggle.classList.toggle("active");
+        body.classList.toggle("dark");
+
+        // js code to keep user selected mode even page refresh or file reopen
+        if(!body.classList.contains("dark")){
+            localStorage.setItem("mode" , "light-mode");
+        }else{
+            localStorage.setItem("mode" , "dark-mode");
+        }
+      });
+
+// js code to toggle search box
+        searchToggle.addEventListener("click" , () =>{
+        searchToggle.classList.toggle("active");
+      });
+ 
+      
+//   js code to toggle sidebar
+sidebarOpen.addEventListener("click" , () =>{
+    nav.classList.add("active");
+});
+
+body.addEventListener("click" , e =>{
+    let clickedElm = e.target;
+
+    if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
+        nav.classList.remove("active");
+    }
+});
+
+</script>
+ <section id="showcase">
+      <div class="container">
+        <h1>Sandi Professional Web Design</h1>
+        <p>Haii, Saya Sandi permana putra saya seorang pelajar di SMA NEGERI 1 KROYA, Saya saat ini sedang mengembangkan website.</p>
+      </div>
+    </section>
+
+    <section id="newsletter">
+      <div class="container">
+        <h1>Di Buat dengan pemanis buatan</h1>
+        <form>
+          <input type="email" placeholder="Enter Email..." required>
+          <button type="submit" class="button_1"><a href="" style="color: white">Send</button></a>
+        </form>
+      </div>
+    </section>
+
+    <section id="boxes">
+      <div class="container">
+        <div class="box">
+          <img src="./img/logo_html.png">
+          <h3>HTML5 Markup</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mi augue, viverra sit amet ultricies</p>
+        </div>
+        <div class="box">
+          <img src="./img/logo_css.png">
+          <h3>CSS3 Styling</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mi augue, viverra sit amet ultricies</p>
+        </div>
+        <div class="box">
+          <img src="./img/logo_brush.png">
+          <h3>Graphic Design</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mi augue, viverra sit amet ultricies</p>
+        </div>
+        
+      </div>
+    </section>
+    <!---Scrip-->
+
+    <footer>
+      <p>Sandi Web Deisgn, Copyright &copy; 2023</p>
+    </footer>
+  </body>
+</html>
+
+</body>
+</html>
